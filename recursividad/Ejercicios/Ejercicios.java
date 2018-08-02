@@ -1,12 +1,13 @@
 class recursividad{
     
+    //  1) Potencia en un numero k
     public int potencia(int a, int b){
         if(b==1)
             return a;
         else 
             return a*potencia(a, b-1);
     }
-    // num es primo
+    // 2) num es primo
     public boolean esPrimo(int num){
         if(divisores(num,1)==1) return true;
         return false;
@@ -21,7 +22,7 @@ class recursividad{
         return resp;
     }
 
-    //cantidad de digitos
+    //  3)  cantidad de digitos
     public int cantidadDigitos(int num){
         int cant=0;
         if(num>0){
@@ -30,7 +31,7 @@ class recursividad{
         return cant;
     }
 
-    //digitos de un numero n son primos
+    //  14)     digitos de un numero n son primos
     boolean allPar(int num){
         boolean resp= true;
         if(num>0){
@@ -257,32 +258,7 @@ cuando N=   1       2       3       4       5       6       7       8       9   
 
 
     
-    // 32) eliminar segudas ocurencias de un numero entero de Izq a Der
-    String elimOcurrencias(int num){
-        String cad = num+"";
-        return (elim(cad, cad.length()-1, ""));
-    }//                     2656342 =>  56342
-    private String elim(String cad, int pos, String vistos){
-        String resp="";
-        if(pos>=0){                             //  2656342 =>  56342
-            char aux = cad.charAt(pos);         //  0123456     01234
-            if(! yaEsta(aux, vistos, 0)){
-                vistos += aux+"";
-            }
-            resp = elim(cad, pos-1, vistos)+aux+"";
-        }
-        return resp;
-    }
-    private boolean yaEsta(char a, String cad, int pos){
-        boolean resp = false;
-        if(pos<cad.length()){
-            if(cad.charAt(pos)== a)
-                resp = true;
-            else
-                resp = yaEsta(a, cad, pos+1);
-        }
-        return resp;
-    }
+    
 
 
 }
