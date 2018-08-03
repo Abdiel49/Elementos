@@ -268,18 +268,20 @@ cuando N=   1       2       3       4       5       6       7       8       9   
             char aux = cad.charAt(pos);         //  0123456     01234
             if(! yaEsta(aux, vistos, 0)){
                 vistos += aux+"";
+                resp = elim(cad, pos-1, vistos)+aux+"";
+            }else{
+                resp = elim(cad, pos-1, vistos);
             }
-            resp = elim(cad, pos-1, vistos)+aux+"";
         }
         return resp;
     }
     private boolean yaEsta(char a, String cad, int pos){
         boolean resp = false;
         if(pos<cad.length()){
-            if(cad.charAt(pos)== a)
+            if((cad.charAt(pos))== a)
                 resp = true;
             else
-                resp = yaEsta(a, cad, pos+1);
+                resp = yaEsta(a, cad, pos+1) || resp;
         }
         return resp;
     }
