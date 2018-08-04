@@ -11,7 +11,7 @@ class Ejer42{
     int contarPatron(String cadena, String patron){
         return contarPatron(cadena, patron, 0);
     }
-    public int contarPatron(String cadena, String patron, int pos){
+    private int contarPatron(String cadena, String patron, int pos){
         int resp=0;
         if((pos+patron.length())<cadena.length()){
             String aux = cadena.substring(pos, pos+patron.length());

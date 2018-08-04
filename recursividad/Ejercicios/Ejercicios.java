@@ -196,7 +196,7 @@ cuando N=   1       2       3       4       5       6       7       8       9   
         return resp;
     }
 
-    /// chinitos de nivel n
+    /// 47)     chinitos de nivel n
     String chinitos(int n){
         if(n==1)
             return "(-_-)";
