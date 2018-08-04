@@ -287,19 +287,45 @@ cuando N=   1       2       3       4       5       6       7       8       9   
     }
     
     // 35) N_sima fila del triangulo de pascal
-    String nSimaFPascal(int n){
-        return "";
-    }
-    private String calcularNFilaP(int n){
-        String resp = "";
+    
+    int[] calcularNsimaFilaPascal(int n){
+        int[] resp;
         if(n==0){
-            resp = "1";
+            resp = toArray("1", 0, new int[1]);
         }else if(n == 1){
-            resp = "11";
-        }else{
-            //resp = {1,2,1};
+            resp = toArray("11", 0, new int[2]);
+        }
+        else{
+            int[]mat={1,1};
+            resp = calcular(n, 1, mat);
         }
         return resp;
-    } 
+    }  
+    private int[] calcular(int n, int pos, int[]mat){
+        int[]resp;
+        int[] matMax = new int[mat.length+1];
+        if(pos<n){
+            matMax[0] = matMax[(matMax.length-1)] = 1;
+            resp = calcFila(mat, matMax, 0);
+            resp = calcular(n, pos+1, resp);
+        }else{
+            resp = mat;
+        }
+        return resp;
+    }
+    private int[] calcFila(int[]mat, int[] matMax, int pos){
+        if((pos+1)<mat.length){
+            matMax[pos+1]=mat[pos]+mat[pos+1];
+            calcFila(mat, matMax, pos+1);
+        }
+        return matMax;
+    }
+    private int[] toArray(String cad, int pos, int[]mat){
+        if(pos<cad.length()){
+            mat[pos]=Integer.parseInt(cad.substring(pos, pos+1));
+            toArray(cad, pos+1, mat);
+        }
+        return mat;
+    }
 
 }
