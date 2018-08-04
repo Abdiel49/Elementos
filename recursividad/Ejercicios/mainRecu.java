@@ -55,7 +55,9 @@ public class mainRecu{
         //sms("el cambio perfacto para 62.56 pesos es :\n"+r.cambiar(62.56));
         //sms("el cambio perfacto para 125.36 pesos es :\n"+r.cambiar(125.36));
 
-        sms("al eliminar las segundas ocurencias del numero 2656342 =>  56342 -> "+r.elimOcurrencias(2656342));
+        //sms("al eliminar las segundas ocurencias del numero 2656342 =>  56342 -> "+r.elimOcurrencias(2656342));
+        Ejercicio39 e = new Ejercicio39();
+        sms("la cadena 'gggbbddeeewwasss' en su forma reducida sera: "+e.formatReduc("gggbbddeeewwasss"));
     }
 
     private static void sms (String cad){
