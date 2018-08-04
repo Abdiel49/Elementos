@@ -286,6 +286,20 @@ cuando N=   1       2       3       4       5       6       7       8       9   
         return resp;
     }
     
-
+    // 35) N_sima fila del triangulo de pascal
+    String nSimaFPascal(int n){
+        return "";
+    }
+    private String calcularNFilaP(int n){
+        String resp = "";
+        if(n==0){
+            resp = "1";
+        }else if(n == 1){
+            resp = "11";
+        }else{
+            //resp = {1,2,1};
+        }
+        return resp;
+    } 
 
 }
